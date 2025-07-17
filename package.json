@@ -1,31 +1,32 @@
 {
-  "name": "vue2",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
-  },
-  "dependencies": {
-    "axios": "^0.19.0",
-    "core-js": "^2.6.5",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.0",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.12.0",
-    "@vue/cli-service": "^3.12.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
+  "name": "@liuyuwei/vue-project",
+  "version": "1.0.7",
+  "type": "module",
+  "main": "./dist/my-vue-components.umd.js",
+  "module": "./dist/my-vue-components.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-vue-components.es.js",
+      "require": "./dist/my-vue-components.umd.js"
     }
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  "files": [
+    "dist",
+    "src/views"
+  ],
+  "scripts": {
+    "serve": "vite --host --mode development",
+    "build": "vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "vite": "^5.0.8"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  }
 }
